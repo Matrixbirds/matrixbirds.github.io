@@ -68,4 +68,10 @@ theme: yilia
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github
+  repo: git@github.com:Matrixbirds/matrixbirds.github.io.git
+  branch: gh-pages
+  type: git
+  repo: git@gitcafe.com:Matrixbirds/matrixbirds.git
+  branch: gitcafe-pages
+  message: "post new articles"
