@@ -66,9 +66,7 @@ theme: yilia
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Matrixbirds/matrixbirds.github.io.git
-  branch: master
-  type: git
-  repo: git@gitcafe.com:Matrixbirds/matrixbirds.git
-  branch: gitcafe-pages
-  message: "hexo deploying"
+  repo: 
+    github: git@github.com:Matrixbirds/matrixbirds.github.io.git,gh-pages
+    gitcafe: git@gitcafe.com:Matrixbirds/matrixbirds.git,gitcafe-pages
+  message: "deploy both of on github && gitcafe"
