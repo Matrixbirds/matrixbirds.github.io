@@ -67,6 +67,6 @@ theme: yilia
 deploy:
   type: git
   repo: 
-    github: git@github.com:Matrixbirds/matrixbirds.github.io.git,gh-pages
+    github: git@github.com:Matrixbirds/matrixbirds.github.io.git,master
     gitcafe: git@gitcafe.com:Matrixbirds/matrixbirds.git,gitcafe-pages
   message: "deploy both of on github && gitcafe"
