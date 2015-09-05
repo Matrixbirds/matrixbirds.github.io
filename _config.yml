@@ -70,7 +70,7 @@ theme: yilia
 deploy:
   type: git
   repo: git@github.com:Matrixbirds/matrixbirds.github.io.git
-  branch: gh-pages
+  branch: master
 #  type: git
 #  repo: git@gitcafe.com:Matrixbirds/matrixbirds.git
 #  branch: gitcafe-pages
