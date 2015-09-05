@@ -71,7 +71,7 @@ deploy:
   type: git
   repo: git@github.com:Matrixbirds/matrixbirds.github.io.git
   branch: master
-#  type: git
-#  repo: git@gitcafe.com:Matrixbirds/matrixbirds.git
-#  branch: gitcafe-pages
+  type: git
+  repo: git@gitcafe.com:Matrixbirds/matrixbirds.git
+  branch: gitcafe-pages
   message: "hexo deploying"
