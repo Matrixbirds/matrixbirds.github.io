@@ -38,7 +38,7 @@ tags:
 
 ### 部署到github, gitcafe
 1. 修改当前项目根目录的package.json中的部署文件
-   ```json
+   ```js
    {
      "name": "你项目的名称(随意填)",
      "version": "0.0.0(版本同上)",
@@ -59,7 +59,7 @@ tags:
        "hexo-deployer-git": "0.0.4"
      }
    }  
-   ```  
+   ```
 
 2. 首先需要分别在github, gitcafe上建立一个repository
 
@@ -72,11 +72,11 @@ tags:
   把`deploy`部分替换成如下  
   ```yml
   deploy:  
-    type: git  
-    repo:  
-      github: git@github.com:Matrixbirds/matrixbirds.github.io.git,master  
-      gitcafe: git@gitcafe.com:Matrixbirds/matrixbirds.git,gitcafe-pages  
-    message: "deploy both of on github && gitcafe"  
+    type: git
+    repo:
+      github: git@github.com:Matrixbirds/matrixbirds.github.io.git,master
+      gitcafe: git@gitcafe.com:Matrixbirds/matrixbirds.git,gitcafe-pages
+    message: "deploy both of on github && gitcafe"   
   ```
 
 4. 执行`hexo generate && hexo deploy`生成静态文件并且发布到目标项目地址的目标分支
