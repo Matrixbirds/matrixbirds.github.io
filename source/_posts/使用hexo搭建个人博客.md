@@ -37,7 +37,7 @@ tags:
 
 
 ### 部署到github, gitcafe
-0. 修改当前项目根目录的package.json中的部署文件
+1. 修改当前项目根目录的package.json中的部署文件
    ```json
    {
      "name": "你项目的名称(随意填)",
@@ -61,14 +61,14 @@ tags:
    }  
    ```  
 
-1. 首先需要分别在github, gitcafe上建立一个repository
+2. 首先需要分别在github, gitcafe上建立一个repository
 
   github上repository的名字为[username].github.io
   gitcafe上repository的名字为[username]
 
   github上需要部署到`master`分支, gitcafe上则需要部署到`gitcafe-pages`分支  
 
-2. 修改根目录下面的: `_config.yml`  
+3. 修改根目录下面的: `_config.yml`  
   把`deploy`部分替换成如下  
   ```yml
   deploy:  
@@ -79,10 +79,10 @@ tags:
     message: "deploy both of on github && gitcafe"  
   ```
 
-3. 执行`hexo generate && hexo deploy`生成静态文件并且发布到目标项目地址的目标分支
+4. 执行`hexo generate && hexo deploy`生成静态文件并且发布到目标项目地址的目标分支
 
-4. 访问url进行测试 [http://matrixbirds.github.io](http://matrixbirds.github.io), [http://matrixbirds.gitcafe.io](http://matrixbirds.gitcafe.io)
+5. 访问url进行测试 [http://matrixbirds.github.io](http://matrixbirds.github.io), [http://matrixbirds.gitcafe.io](http://matrixbirds.gitcafe.io)
 
-5. 如果上述测试没问题则可以push发布版本到`deployer`分支
+6. 如果上述测试没问题则可以push发布版本到`deployer`分支
 
-6. 如果在`hexo deploy`之前当前目录存在`.deploy_git目录`则应当先删除该目录后再执行发布命令
+7. 如果在`hexo deploy`之前当前目录存在`.deploy_git目录`则应当先删除该目录后再执行发布命令
