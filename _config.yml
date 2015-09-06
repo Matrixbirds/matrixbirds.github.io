@@ -4,7 +4,7 @@
 
 # Site
 title: 哈库马拉塔塔
-description: 一只热爱二次元, 热爱coding的段子猿
+description: 一只热爱二次元, 热爱coding的段子手
 author: Matrixbirds
 
 # URL
@@ -66,7 +66,7 @@ theme: yilia
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
+  repo:
     github: git@github.com:Matrixbirds/matrixbirds.github.io.git,master
     gitcafe: git@gitcafe.com:Matrixbirds/matrixbirds.git,gitcafe-pages
   message: "deploy both of on github && gitcafe"
