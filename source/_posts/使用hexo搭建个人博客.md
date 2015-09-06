@@ -9,10 +9,10 @@ tags:
 
 ### 搭建步骤
 ```bash
-1. 安装git环境  
-2. npm install -g hexo  
-3. cd /deploy_directory && hexo init ## 生成hexo的项目文件
-4. npm install ## 安装hexo的项目依赖
+- 安装git环境  
+- npm install -g hexo  
+- cd /deploy_directory && hexo init ## 生成hexo的项目文件
+- npm install ## 安装hexo的项目依赖
 ```
 
 
