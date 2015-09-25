@@ -1,6 +1,9 @@
 title: '[译] JavaScript中的函数式编程--Partial Function applications'
 date: 2015-09-24 23:53:40
 tags:
+  - 函数式编程
+  - javascript
+  - 翻译
 ---
 
 #### 序  
