@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>重拾算法计划 | 哈库马拉塔塔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="序  自从工作后学习Ruby on Rails后感觉渐渐地自己也变得懒惰起来。因为Rails封装了足够强大的工具，让我很少需要关心怎么去写SQL语句，甚至都已经无法区分SQL语句的几种分类[DDL, DML, DCL, TCL]，几乎migration和active_record可以帮我解决许多事儿，确实提高了很大的生产率，但过度依赖它，只会让我离不开它。这并不是我所希望的，框架毕竟只是提高生产率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重拾算法计划">
+<meta property="og:url" content="http://matrixbirds.github.io/2015/09/30/重拾算法计划/index.html">
+<meta property="og:site_name" content="哈库马拉塔塔">
+<meta property="og:description" content="序  自从工作后学习Ruby on Rails后感觉渐渐地自己也变得懒惰起来。因为Rails封装了足够强大的工具，让我很少需要关心怎么去写SQL语句，甚至都已经无法区分SQL语句的几种分类[DDL, DML, DCL, TCL]，几乎migration和active_record可以帮我解决许多事儿，确实提高了很大的生产率，但过度依赖它，只会让我离不开它。这并不是我所希望的，框架毕竟只是提高生产率">
+<meta property="og:updated_time" content="2015-09-30T08:29:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重拾算法计划">
+<meta name="twitter:description" content="序  自从工作后学习Ruby on Rails后感觉渐渐地自己也变得懒惰起来。因为Rails封装了足够强大的工具，让我很少需要关心怎么去写SQL语句，甚至都已经无法区分SQL语句的几种分类[DDL, DML, DCL, TCL]，几乎migration和active_record可以帮我解决许多事儿，确实提高了很大的生产率，但过度依赖它，只会让我离不开它。这并不是我所希望的，框架毕竟只是提高生产率">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Matrixbirds</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Matrixbirds</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="undefined" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Matrixbirds</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-重拾算法计划" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/30/重拾算法计划/" class="article-date">
+  	<time datetime="2015-09-30T06:34:04.000Z" itemprop="datePublished">2015-09-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      重拾算法计划
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="序">序</h4><p>  自从工作后学习<code>Ruby on Rails</code>后感觉渐渐地自己也变得懒惰起来。<br>因为<code>Rails</code>封装了足够强大的工具，让我很少需要关心怎么去写SQL语句，甚至都已经无法区分SQL语句的几种分类<code>[DDL, DML, DCL, TCL]</code>，<br>几乎<code>migration</code>和<code>active_record</code>可以帮我解决许多事儿，确实提高了很大的生产率，但过度依赖它，只会让我离不开它。<br>这并不是我所希望的，框架毕竟只是提高生产率的工具而已，即使脱离了它也应当具备一定高效解决问题的能力。</p>
+<h4 id="不要让你的代码拖累了应用">不要让你的代码拖累了应用</h4><p>  <code>PHP is the world&#39;s BEST language, PHP7 is coming, it brings PHP more powerful</code> - LOL just a jokes。<br>经常看到一些人争论语言的优劣时，会根据一些所谓笼统的概念来判断一个语言的性能快慢和学习成本。这些并非是问题的根本，<br>就好比编译型语言天生就要比解释型语言快很多倍。是的，确实快，但取决于不同平台，不同写法，以及不同场景。为何<code>Erlang</code>中<br>启动一个进程，并不需要太多开销？为何<code>Java</code>里的并没有真实的二维数组的概念？为何<code>jQuery</code>提倡<code>write less do more</code>？<br>为何<code>Ruby</code>程序员需要学习它的语法糖？一个程序的快慢是由代码所决定的，通过学习语法糖和算法，才能最大化的输出代码的价值。</p>
+<h4 id="LeetCode">LeetCode</h4><p>  LeetCode是一个Online Judge的平台，它和一些ACM平台不太一样，算法题是它的一部分，它的宗旨更多是，让大家写出优雅<br>的代码，因此它还有<code>Database</code>，<code>Shell</code>等领域。不光能够提升分析问题与解决问题的能力，还能有效的帮助你熟悉<code>SQL</code>，<br><code>ShellScript</code>。</p>
+<h4 id="不为刷题而刷题">不为刷题而刷题</h4><p>  玩一些竞技类游戏的时候，我会很在意战绩，因为战绩能带给我一些优越感，但这并不符合我的初衷。<br>  引用一下<code>Perl</code>语言的座右铭：<code>There&#39;s more than one way to do it</code><a href="https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it" target="_blank" rel="external">TMTOWTDI</a>，不论采用什么语言<br>都应当存在最优解法和最差解法。不能因为一次<code>Acceptance</code>就不再去研究有没有更好的解法？或者更糟的解法？多种解法之间有多么糟糕？<br>他们的benchmark曲线又是怎样的？如果对这些不够了解，是没发真正的理解这道题的考点，自然也就没法享受到它带个你的<code>乐趣</code>。<br>当然<a href="https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it" target="_blank" rel="external">TMTOWTDI</a>，并不适用于所有情景，<br>在团队协作中或者工作中，尽量的统一代码规范，才是重要的。</p>
+<h4 id="怎么执行？">怎么执行？</h4><ol>
+<li>和基友采用了Tower.im的看板模式来做多人学习的TodoList</li>
+<li>把LeetCode代码push到github<a href="https://github.com/Matrixbirds/LetKa" target="_blank" rel="external">LetKa</a></li>
+<li>根据刷题情况定期写<code>日记</code>总结</li>
+<li>每周至少一篇刷题分析</li>
+</ol>
+<h4 id="终">终</h4><p>  学习算法的目的，一方面是为了提高分析、定位并解决问题的能力。另一方面希望自己能够熟悉<code>ruby</code>的语法糖。<br>再就是希望刷题能带给自己更多的idea。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/24/2015年终总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          2015年终总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/24/译-JavaScript中的函数式编程-Partial-Function-applications/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[译] JavaScript中的函数式编程--Partial Function applications</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Matrixbirds
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: undefined,
+		mathjax: undefined,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

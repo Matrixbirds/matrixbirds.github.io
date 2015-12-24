@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>{ gulp: 自动化构建Web前端 } | 哈库马拉塔塔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="序最近工作中因新增业务，需要做一些脱离业务数据的页面demo出来，为了降低一些没意义的重复工作量，我发现了gulp这个前端自动化任务构建工具。并被它的streaming所吸引。打算写篇博客来总结一下。
+什么是Gulp，它能用来做什么？Gulp是一个基于Node.js流式构建前端的自动化任务（Task）工具，什么是自动化任务？可以理解为C中的Makefile，编译资源并且发布成应用。前端？有哪些资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{ gulp: 自动化构建Web前端 }">
+<meta property="og:url" content="http://matrixbirds.github.io/2015/09/12/gulp-自动化构建Web前端/index.html">
+<meta property="og:site_name" content="哈库马拉塔塔">
+<meta property="og:description" content="序最近工作中因新增业务，需要做一些脱离业务数据的页面demo出来，为了降低一些没意义的重复工作量，我发现了gulp这个前端自动化任务构建工具。并被它的streaming所吸引。打算写篇博客来总结一下。
+什么是Gulp，它能用来做什么？Gulp是一个基于Node.js流式构建前端的自动化任务（Task）工具，什么是自动化任务？可以理解为C中的Makefile，编译资源并且发布成应用。前端？有哪些资源">
+<meta property="og:updated_time" content="2015-09-26T05:53:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{ gulp: 自动化构建Web前端 }">
+<meta name="twitter:description" content="序最近工作中因新增业务，需要做一些脱离业务数据的页面demo出来，为了降低一些没意义的重复工作量，我发现了gulp这个前端自动化任务构建工具。并被它的streaming所吸引。打算写篇博客来总结一下。
+什么是Gulp，它能用来做什么？Gulp是一个基于Node.js流式构建前端的自动化任务（Task）工具，什么是自动化任务？可以理解为C中的Makefile，编译资源并且发布成应用。前端？有哪些资源">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Matrixbirds</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Matrixbirds</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="undefined" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Matrixbirds</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-gulp-自动化构建Web前端" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/12/gulp-自动化构建Web前端/" class="article-date">
+  	<time datetime="2015-09-12T12:09:33.000Z" itemprop="datePublished">2015-09-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      { gulp: 自动化构建Web前端 }
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stream-build/">stream build</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-fontend/">web fontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动化/">自动化</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="序">序</h4><p>最近工作中因新增业务，需要做一些脱离业务数据的页面demo出来，为了降低一些没意义的重复工作量，<br>我发现了<code>gulp</code>这个前端自动化任务构建工具。并被它的<code>streaming</code>所吸引。打算写篇博客来总结一下。</p>
+<h3 id="什么是Gulp，它能用来做什么？">什么是Gulp，它能用来做什么？</h3><p><code>Gulp</code>是一个基于<code>Node.js</code>流式构建前端的自动化任务（Task）工具，什么是自动化任务？可以理解为C中的<code>Makefile</code>，<br>编译资源并且发布成应用。前端？有哪些资源需要被编译？并且要如何发布？</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/15/译-Templating-with-ERB-HAML/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          [译] - 使用ERB&amp;HAML更好的使用模板引擎
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/07/Redis-Cookbook-Chapter-1-An-Introduction-to-Redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis Cookbook - Chapter 1. An Introduction to Redis</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Matrixbirds
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: undefined,
+		mathjax: undefined,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

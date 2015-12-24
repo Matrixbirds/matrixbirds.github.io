@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Redis Cookbook - Chapter 1. An Introduction to Redis | 哈库马拉塔塔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="何时使用Redis?情景:  几乎每个应用都需要存储数据，并且经常会数据变动很快。 至今，仍然有许多应用采用RDBMS(关系型数据库管理系统) 如：Oracle, MySQL, or PostgreSQL。然而随着一种新存储模式得出现，从而可以把无模式的数据存入更有效的NoSQL中，选择是否使用SQL数据库或者NoSQL经常是设计一个成功应用中的第一步。
+解决方案:  考虑是否选用SQL还是NoS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis Cookbook - Chapter 1. An Introduction to Redis">
+<meta property="og:url" content="http://matrixbirds.github.io/2015/09/07/Redis-Cookbook-Chapter-1-An-Introduction-to-Redis/index.html">
+<meta property="og:site_name" content="哈库马拉塔塔">
+<meta property="og:description" content="何时使用Redis?情景:  几乎每个应用都需要存储数据，并且经常会数据变动很快。 至今，仍然有许多应用采用RDBMS(关系型数据库管理系统) 如：Oracle, MySQL, or PostgreSQL。然而随着一种新存储模式得出现，从而可以把无模式的数据存入更有效的NoSQL中，选择是否使用SQL数据库或者NoSQL经常是设计一个成功应用中的第一步。
+解决方案:  考虑是否选用SQL还是NoS">
+<meta property="og:updated_time" content="2015-09-07T07:19:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis Cookbook - Chapter 1. An Introduction to Redis">
+<meta name="twitter:description" content="何时使用Redis?情景:  几乎每个应用都需要存储数据，并且经常会数据变动很快。 至今，仍然有许多应用采用RDBMS(关系型数据库管理系统) 如：Oracle, MySQL, or PostgreSQL。然而随着一种新存储模式得出现，从而可以把无模式的数据存入更有效的NoSQL中，选择是否使用SQL数据库或者NoSQL经常是设计一个成功应用中的第一步。
+解决方案:  考虑是否选用SQL还是NoS">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Matrixbirds</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Matrixbirds</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="undefined" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Matrixbirds</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Redis-Cookbook-Chapter-1-An-Introduction-to-Redis" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/07/Redis-Cookbook-Chapter-1-An-Introduction-to-Redis/" class="article-date">
+  	<time datetime="2015-09-06T16:11:04.000Z" itemprop="datePublished">2015-09-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Redis Cookbook - Chapter 1. An Introduction to Redis
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="何时使用Redis?">何时使用Redis?</h3><h3 id="情景:">情景:</h3><p>  几乎每个应用都需要存储数据，并且经常会数据变动很快。 至今，仍然有许多应用采用RDBMS(关系型数据库管理系统) 如：Oracle, MySQL, or PostgreSQL。然而随着一种新存储模式得出现，从而可以把无模式的数据存入更有效的NoSQL中，选择是否使用SQL数据库或者NoSQL经常是设计一个成功应用中的第一步。</p>
+<h3 id="解决方案:">解决方案:</h3><p>  考虑是否选用SQL还是NoSQL来存储数据的关键2个点是：性质和使用模式。一些数据适合用关系型存储引擎，一些数据则适合独立于性质的NoSQL引擎，像<code>Redis</code>，或者别的代替品。  如果你不需要依赖于特有的RDBMS的特性并且需要高性能和健壮性的非关系型数据库，那么NoSQL可能是最理想的选择。因此决定是否用RDBMS还是NoSQL存储引擎，你需要看看一些特定的东西，它们可以帮助你做决定。另外要记住，通常两者一起使用是必要的。<br>  当工作在Web上时，你的数据和数据模型经常随着功能和业务的更新变化。改进数据库设计在关系型数据库中支撑起这些改变是相当痛苦的过程，特别是你不能承担起宕机的时候，人们通常无法忍受宕机，因为应用被期望每周24小时都在运行。在最近的一次Mongodb的演讲中，<code>Jeremy Zawodny</code>在他的<a href="http://blog.zawodny.com/category/craigslist/" target="_blank" rel="external">craigslist</a>中提到他们是如何用了两个月的时间改造了他们的档案服务的数据库设计<br>  是一些特别适合非关系型存储的数据案例，事务细节，历史数据，服务日志。它们通常是高度动态的，经常改动并且他们的存储往往增长迅速，需要不断的调整<code>schema</code>来存储他们，通常他们也不会感到<code>关系型</code>，其中的数据也不倾向于和其他类型数据建立关系，这是一个好的迹象表明他们可以用比RDBMS好的其他类型数据库。<br>  另一种用于衡量是否用NoSQL的办法就是你自己是否找到不寻常的数据由于性能原因，不再从关系型系统中收益，例如一致性和冗余性检查。<br>  需要记住的事，使用NoSQL数据库的时，通常不会提供ACID(原子性，一致性，分离线，持久性)，或者仅仅提供一部分。这需要他们做一些决策否则不可能。<br>  <code>Redis</code>提供了部分ACID的支持，它是设计基于单线程实现的(保证 一致性 分离性)，并且如果配置总是<code>appendfsync</code>会完整的支持，提供持久化。<br>  性能也会成为一个关键因素。NoSQL数据库通常比较快，特有的如写入操作，让他们成为应用的优势是写入重。<br>  以上说明，尽管NoSQL看起来更灵感，也还有强大的参数为存储关系型数据在RDBMS，如果你有可预测的数据，是一个正常的结构，你可以获得使用关系型数据库的好处。在做之前一定要先关注数据再去做决定。</p>
+<h3 id="不要相信炒作">不要相信炒作</h3><p>  NoSQL数据库，例如 Redis 上手快，简单，适用于许多现代问题。但是相比下之下，选择一件正确的工具工作总是很重要的。发挥你工具的优势可以通过观察你的存储,多久你会访问它,以及数据(及其模式)如何随时间变化。<br>  一旦你衡量过所有的选项，选择SQL(稳定的、可预测的关系数据)还是NoSQL(临时、高度动态数据)应该是一个简单的任务。提前做这种想法会节省很多麻烦在未来数据迁移工作。<br>  在NoSQL数据库之间也有许多大不同地方，如你需要账号。MongoDB是一个功能重的文档型数据库，允许你执行区间查询，正则表达式搜索，索引，MapReduce。你需要衡量所有的因素，当你选择作为你的数据库时。就和之前说的一样，问题归结为你的数据是什么和你锁需要的模式是什么。<br>  例如，Redis是一个极快的，完美的适合构建写操作频繁的应用，数据长发生变化，数据适合Redis的数据结构(例如，分析数据)。一个场景，你可能不能使用Redis如果你有一个非常大的数据集，只有一小部分是“热数据”(经常被访问)或数据集情况下你不适合在内存中。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/12/gulp-自动化构建Web前端/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          { gulp: 自动化构建Web前端 }
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/06/使用hexo搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用hexo搭建个人博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Matrixbirds
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: undefined,
+		mathjax: undefined,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
