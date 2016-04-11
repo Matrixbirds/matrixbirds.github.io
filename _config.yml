@@ -57,6 +57,13 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+plugin:
+    - hexo-generator-feed
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
