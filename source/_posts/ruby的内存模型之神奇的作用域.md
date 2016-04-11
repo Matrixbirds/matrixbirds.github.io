@@ -48,4 +48,30 @@ tags:
   puts Ruby.poker
   # ["poker_2", 70269578351860]
 ```
-以上代码中。`poker`是一个`instance_method`, `self.poker`则是一个`self`对象定义的`singleton_method`,
+以上代码中。`poker`是一个`instance_method`, `self.poker`则是一个`self`对象定义的`singleton_method`.
+
+ruby是一门着重强调block的语言，要理解`instance` 和 `singleton`的区别还是得从它们的作用区来分析.
+以上代码可以改为如下：
+```ruby
+  # ruby class
+  class Ruby
+    def poker
+      [@poker, @poker.object_id]
+    end
+  end
+
+  # ruby metaclass
+  class << Ruby
+    @poker = "poker_2"
+
+    def poker
+      [@poker, @poker.object_id]
+    end
+  end
+```
+对比两段代码，可以看出。`self.poker` 和 `class << Ruby` 是等价的。
+第二种写法可以看出他们的代码块并不是同一个作用域，因此`@poker`这个实例变量，
+也存在不同的实例对象里。
+
+
+#### ruby的底层是如何描述 `class` define 和 `singleton_class` define的？
