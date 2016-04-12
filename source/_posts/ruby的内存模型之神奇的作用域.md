@@ -288,3 +288,8 @@ void rb_gvar_val_setter(VALUE val, ID id, void *data, struct rb_global_variable 
   var->data = (void*)val;
 }
 ```
+
+#### 参考资料
+
+[http://ruby-hacking-guide.github.io/](http://ruby-hacking-guide.github.io/)
+[ruby-2.3.0][https://github.com/ruby/ruby/tree/v2_3_0]
