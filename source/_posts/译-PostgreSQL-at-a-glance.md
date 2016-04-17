@@ -46,4 +46,53 @@ PostgresSQL的图标是一个叫做`Slonik`的大象（这是来源于俄语，�
 #### 功能性以及局限性
 
 PostgresSQL提供事务的支持和ACID，这都是作为关系型数据最基本的功能。此外PostgresSQL还支持许多先进的功能和扩展功能对于
-学术研究提供了基础可靠性和稳定性。
+学术研究提供了基本的可靠性和稳定性。PostgresSQL具有相当丰富的功能列表。
+  * 嵌套的事务（savepoints)
+  * 时间恢复点
+  * 在线热备份，并行还原
+  * 规则系统（query write system)
+  * B-tree, R-tree, hash, GiST 方法索引
+  * 多版本并发控制（MVCC）
+  * 表空间
+  * Procedural Language
+  * Information Schema
+  * I18n, L10N（国际化，本地化）
+  * 列级排序规则
+  * 数组，XML，UUID（数据类型）
+  * 序列（用于值的自增）
+  * 异步复制
+  * limit/offset
+  * 全文检索
+  * SSL, IPv6
+  * key-value（键值） 存储
+  * 表继承
+
+除了这些以外，它还具有多种功能和企业级数据库的功能。
+总体上来看，PostgresSQL还存在以下的许多存储限制：  
+
+| Limit | Value |
+| :---: | :-----: |
+| 数据库存储最大上限 | 无限制 |
+| 单表最大存储上限 | 32TB |
+| 单表行最大存储上限 | 1.6GB |
+| 字段最大存储上限 | 1GB |
+| 单表行数上限 | 无限制 |
+| 单表列数上限 | 250~1600 |
+| 单表最索引数 | 无限制 |
+
+#### PostgresSQL里程碑
+
+| 版本 | 发布时间 | 主要功能 |
+| :--: | :-----: | :-----: |
+| 0.01 | 1995 | Postgres95 发布 |
+| 1.0  | 1995 | 版权变动，开放源码|
+| 6.0~6.5 | 1997~1999 | 更名 PostgreSQL，加入索引、试图、规则，序列，触发器，查询优化器，约束，子查询，MVCC和JDBC接口 |
+| 7.0~7.4 | 2000~2010 | 外键，SQL92语法加入，日志预写，Information schema和国际化 |
+| 8.0~8.4 | 2005~2012 | 提供windows平台原生支持，Savepoint, Point-in-time，recovery，Two-phase commit，表空间, 切分，全文检索，Common table expressions (CTE)，SQL/XML, ENUM, UUID Type，Window functions，Per-database collation，复制，备份 |
+| 9.0 | 2010-09 | 流式复制, 热备份，提供64位windows系统软件支持，基于列的触发器
+| 9.1 | 2011-09 | 功能分化，同步复制，列排序，Unlogged 表，K-nearest-neighbor 索引，序列化隔离级别，Writeable CTE (WITH)，SQL/MED External Data，SE-Linux的集成
+| 9.2 | 2012-09 | 性能优化，linear scalability to 64 cores，降低CPU层面的耗能，Cascade 流式复制，JSON, Range 数据类型，优化了锁的管理，Space-partitioned GiST index，索引扫描（覆盖）
+
+下一个PostgreSQL版本是9.3，在2013年第三季发布。此版本具有许多功能，包括增强的管理功能：并行查询，合并、更改，插入，多版本主复制，物理化试图，增强多语言支持。
+
+#### 内部结构
