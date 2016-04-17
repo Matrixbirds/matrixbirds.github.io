@@ -52,5 +52,8 @@ Linux里线程也是进程的一种实现。进程的实现是从虚拟内存里
 所以你发现进程被抢占了那是因为`I/O-bound`处理了一个阻塞的请求。
 当进程在工作的时候，那是`Processor-bound`在执行代码。
 
+#### nodejs中的eventloop
+
+
 #### 参考资料
   <Linux Kernel Development 3rd Edition>
