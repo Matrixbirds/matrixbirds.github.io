@@ -96,3 +96,20 @@ PostgresSQL提供事务的支持和ACID，这都是作为关系型数据最基�
 下一个PostgreSQL版本是9.3，在2013年第三季发布。此版本具有许多功能，包括增强的管理功能：并行查询，合并、更改，插入，多版本主复制，物理化试图，增强多语言支持。
 
 #### 内部结构
+以下是PostgreSQL的内部构造：  
+![图片木有加载出来](https://raw.githubusercontent.com/Matrixbirds/matrixbirds.github.io/deployer/pictures/postgresql_process_structure.png)
+
+当客户端请求和服务器建立连接，通过步骤（1）接口库（接口包括，libpg，JDBC和ODBC）。
+PostMaster程序通过步骤（2）和服务器传播，然后客户端通过和所分配的服务器连接，执行查询。  
+
+以下是PostgreSQL服务的查询过程：
+![图片木有加载出来](https://raw.githubusercontent.com/Matrixbirds/matrixbirds.github.io/deployer/pictures/postgresql_query_execution_procedure.png)
+当服务器收到客户发来的查询请求时，系统会创建一个语法解析树，系统会根据创建的语法解析树（1）分析，创建一个查询树。  
+接着查询树根据服务器定义的规则（3）找到多个可执行的计划，最终会根据最优的计划生成查询树。  
+当服务器执行查询时候，数据库系统里的catalog使用频繁，在系统内置的catalog中，用户可以直接定义函数和数据结构。以及索引访问方法和规则。在PostgreSQL里catalog起着很重要的作用，用于增加和扩展它的功能。
+
+在PostgreSQL里一个文件可以由多个文件构成，一个页面有一个可扩展开槽页结构：
+![图片木有加载出来](https://raw.githubusercontent.com/Matrixbirds/matrixbirds.github.io/deployer/pictures/postgresql_data_page_structure.png)
+![图片木有加载出来](https://raw.githubusercontent.com/Matrixbirds/matrixbirds.github.io/deployer/pictures/postgresql_index_page_structure.png)
+
+#### 未完待续...
