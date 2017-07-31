@@ -9,7 +9,8 @@
     "deploy": "find . -name '.deploy_git' -type d -delete; hexo g; hexo d"
   },
   "dependencies": {
-    "hexo": "^3.1.0",
+    "global": "^4.3.2",
+    "hexo": "^3.3.8",
     "hexo-deployer-git": "0.0.4",
     "hexo-generator-archive": "^0.1.2",
     "hexo-generator-category": "^0.1.2",
