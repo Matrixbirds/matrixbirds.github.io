@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.4.4"
+    "version": "3.3.8"
   },
   "scripts": {
     "deploy": "find . -name '.deploy_git' -type d -delete; hexo g; hexo d"
@@ -11,16 +11,16 @@
   "dependencies": {
     "global": "^4.3.2",
     "hexo": "^3.3.8",
-    "hexo-deployer-git": "0.0.4",
+    "hexo-deployer-git": "0.3.1",
     "hexo-generator-archive": "^0.1.2",
     "hexo-generator-category": "^0.1.2",
     "hexo-generator-feed": "",
     "hexo-generator-index": "^0.1.2",
     "hexo-generator-tag": "^0.1.1",
-    "hexo-renderer-ejs": "^0.1.0",
+    "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^0.2.4",
     "hexo-renderer-stylus": "^0.3.0",
-    "hexo-server": "^0.1.2"
+    "hexo-server": "^0.2.2"
   },
   "devDependencies": {
     "yarn": "^0.21.3"
