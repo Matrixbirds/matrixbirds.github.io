@@ -17,20 +17,22 @@ tags:
   博主当前rust版本是stable 1.26.1，在macos下brew install rust会安装一个叫做cargo的包管理，cargo的包管理会按照一个叫做toml的文件格式，做相关的包管理，以及编译链接等功能。cargo是一个加入了rust standard的包管理，这对于以前手写makefile或者cmake等构建工具来构建c/c++环境，你只需要配置toml，然后简单的cargo build / cargo run 就可以编译连接并且运行rust程序，真的是一种解脱，（x肥宅快乐水再也不是我加班的动力，写rust就是肥宅的我最高快乐G点）。  
   你以为这样就满足了？naive。
   让我们看看rust中的特性： 
-  1. 表达式和语句  
+  1.表达式和语句    
   ```rust
   fn expression_or_statement(a: i32) -> i32 {
     let mut b = a; // 由于rust中默认赋值之后，都是不可修改的，所以这里要用mut修饰符表示这是一个变量
     b = {
-        let a = 2; // 这里通过{} 打开了一短局部作用域，这里的b只在当前的代码段里占用b的变量名
+        let a = 2; // 这里通过{} 打开了一段局部作用域，这里的b只在当前的代码段里占用b的变量名
         a // 这里我们没有加分号，表示这是一个表达式，表达式会把值返回给调用者。
     }; // 因此这里内部的a表达式值会返回并且赋值给b变量
     b // 这里也是一个表达式 ，作为函数的返回值。
-}
-  ```  
+  }  
+  ```
+
   在rust中末行以表达式方式返回结果，当我们需要提前结束某段操作的时候，才会用到return返回。这点是不是和ruby coding style有点像呢？  
-  2. 安全  
-  ```rust
+
+  2.安全  
+  ```rust  
     let a = 'a' // rust具备类型推导功能，这里'a'字面值是String类型，因而let a没有声明类型也可以完成定义a的操作。
     let a = 1   // 这条语句也是let a = x，区别是它会覆盖之前的语句let a = 'a' 这样以前的a就不复存在，let a = 1会作为新生儿存在。
     // 以下的这段代码会在编译时报错
@@ -66,7 +68,7 @@ tags:
   // 想避免move，可以通过深拷贝，s_b.clone()的方式避免s_b被move成为一个非法值。
 
   // rust中对于动态创建的对象还可以通过borrow的方式，防止s_b作为非法值存在。例如:
-  execute_convert_borrow(s_b) // 这里s_b会借给execute_convert_borrow函数执行，当函数执行结束后会安全的返回它的结果给s_b的作用域。
+  execute_convert_borrow(s_b); // 这里s_b会借给execute_convert_borrow函数执行，当函数执行结束后会安全的返回它的结果给s_b的作用域。
   fn execute_convert_borrow(&s: String) -> usize {
     s.len()
   }

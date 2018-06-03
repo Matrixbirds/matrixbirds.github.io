@@ -6,7 +6,7 @@
     "version": "3.4.4"
   },
   "scripts": {
-    "deploy": "find . -name '.deploy_git' -type d -delete; hexo g; hexo d"
+    "deploy": "find . -name '.deploy_git' -type d -delete; hexo g; hexo d --debug"
   },
   "dependencies": {
     "global": "^4.3.2",
