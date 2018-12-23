@@ -7,4 +7,4 @@ public/
 .deploy*/labs
 .deploy_git/
 labs
-themes/yilia
+*.*~
