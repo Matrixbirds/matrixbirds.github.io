@@ -6,6 +6,7 @@
     "version": "3.8.0"
   },
   "scripts": {
+    "fetch": "git submodule foreach git pull origin master",
     "deploy": "find . -name '.deploy_git' -type d -delete; hexo g; hexo d --debug"
   },
   "dependencies": {
