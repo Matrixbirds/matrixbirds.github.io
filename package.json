@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.4.4"
   },
   "scripts": {
     "fetch": "git submodule foreach git pull origin master",
@@ -25,6 +25,7 @@
     "hexo-server": "^0.2.2"
   },
   "devDependencies": {
+    "hexo-cli": "^1.1.0",
     "yarn": "^0.21.3"
   }
 }
